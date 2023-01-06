@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/05 15:52:55 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/05 16:23:38 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 int	main(int ac, char **av)
 {	
-
+	(void)av;
+	if (ac == 1)
+		exit(1);
+	if (!check_arg())
+		printf("Error\n");
+	if (!check_is_int())
+		printf("Error\n");
+	if (!is_not_dup())
+		printf("Error\n");
 	return (0);
 }
 
