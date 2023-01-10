@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/05 09:48:29 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/10 12:18:28 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
+//for test only
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -23,15 +25,28 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void	swap(t_stack *head);
-void	push(t_stack **first, t_stack **second);
-void	rotate(t_stack **head);
-void	rev_rotate(t_stack **head);
-void	ft_lstprint(t_stack *lst);
-t_stack	*ft_lstnew(int data);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_front(t_stack **lst, t_stack *new);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
-void	ft_lstdelone(t_stack **lst);
+//sorting_functions
+void		swap(t_stack *head);
+void		push(t_stack **first, t_stack **second);
+void		rotate(t_stack **head);
+void		rev_rotate(t_stack **head);
+
+//Linked_list_functions
+void		ft_lstprint(t_stack *lst);
+t_stack		*ft_lstnew(int data);
+t_stack		*ft_lstlast(t_stack *lst);
+void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
+void		ft_lstdelone(t_stack **lst);
+
+//Libft_functions
+char		*ft_strjoin(char **args, int nbr);
+long long	ft_atoi(char *str);
+
+//parsing_functions
+int			check_args(char **args, int nbr);
+int			check_is_int(char **args, int nbr);
+int			is_not_dup(char **args, int nbr);
+void		ft_error(void);
 
 #endif

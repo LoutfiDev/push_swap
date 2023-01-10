@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:28:15 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/06 12:20:03 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/10 11:19:53 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,18 @@ char	*ft_strjoin(char **args, int nbr)
 {
 	int		i;
 	int		j;
-	int		len;
 	char	*res;
 
 	if (!args || !(*args))
 		return (0);
-	len = 0;
-	i = 0;
+	i = 1;
+	j = 0;
 	while (i < nbr)
-		len += ft_strlen(args[i++]);
-	res = malloc((len + nbr + 1) * sizeof(char));
-	if (res != NULL)
+		j += ft_strlen(args[i++]);
+	res = malloc((j + nbr) * sizeof(char));
+	if (res == NULL)
 		return (0);
-	i = 0;
+	i = 1;
 	j = 0;
 	while (i < nbr)
 	{

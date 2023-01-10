@@ -6,23 +6,31 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/05 16:23:38 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/10 12:22:50 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
 int	main(int ac, char **av)
 {	
-	(void)av;
+	char	*args;
+
 	if (ac == 1)
 		exit(1);
-	if (!check_arg())
-		printf("Error\n");
-	if (!check_is_int())
-		printf("Error\n");
-	if (!is_not_dup())
-		printf("Error\n");
+	if (!check_args(av, ac))
+		ft_error();
+	if (!check_is_int(av, ac))
+		ft_error();
+	if (!is_not_dup(av, ac))
+		ft_error();
+	args = ft_strjoin(av, ac);
 	return (0);
 }
 

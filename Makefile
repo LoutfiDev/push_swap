@@ -6,13 +6,15 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 08:43:01 by yloutfi           #+#    #+#              #
-#    Updated: 2023/01/05 15:47:40 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/01/09 16:10:47 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = push_swap.c push_swap_utils.c stack_utils.c
+SRCS = push_swap.c push_swap_utils.c stack_utils.c \
+	ft_strjoin.c parsing_functions.c ft_atoi.c
 
-OBJS = push_swap.o push_swap_utils.o stack_utils.o
+OBJS = push_swap.o push_swap_utils.o stack_utils.o \
+	ft_strjoin.o parsing_functions.o ft_atoi.o
 
 BONUS_SRCS = 				
 
