@@ -6,28 +6,28 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/05 13:32:38 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/10 15:07:31 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack  *head)
+void	swap(t_stack *head)
 {
 	int	temp;
-	
+
 	if (!head || !head->next)
-		return;
+		return ;
 	temp = head->data;
-    head->data = head->next->data;
-    head->next->data = temp;
+	head->data = head->next->data;
+	head->next->data = temp;
 	return ;
 }
 
 void	push(t_stack **first, t_stack **second)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!(*second))
 		return ;
 	tmp = ft_lstnew((*second)->data);
@@ -50,9 +50,9 @@ void	rotate(t_stack **head)
 
 void	rev_rotate(t_stack **head)
 {
-	t_stack *last;
-	t_stack *tmp;
-	
+	t_stack	*last;
+	t_stack	*tmp;
+
 	if (!head)
 		return ;
 	last = ft_lstnew(ft_lstlast(*head)->data);

@@ -6,22 +6,11 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 11:07:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/05 15:36:12 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:03:09 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_lstprint(t_stack *lst)
-{
-	while (lst)
-	{
-		printf("%d\n", lst->data);
-		lst = lst->next;
-	}
-	printf("--------------------\n");
-	return ;
-}
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
@@ -68,7 +57,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 void	ft_lstdelone(t_stack **lst)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!lst)
 		return ;

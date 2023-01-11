@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/10 12:18:28 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:42:15 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,12 @@ void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstdelone(t_stack **lst);
 
 //Libft_functions
+char		**ft_split(char *str, int *ac);
 char		*ft_strjoin(char **args, int nbr);
 long long	ft_atoi(char *str);
 
 //parsing_functions
-int			check_args(char **args, int nbr);
-int			check_is_int(char **args, int nbr);
-int			is_not_dup(char **args, int nbr);
+void		is_valid_args(char **args, int nbr);
 void		ft_error(void);
 
 #endif

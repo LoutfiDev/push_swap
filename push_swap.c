@@ -6,59 +6,44 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/10 12:22:50 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:58:28 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void	ft_lstprint(t_stack *lst)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	while (lst)
+	{
+		printf("%d\n", lst->data);
+		lst = lst->next;
+	}
+	printf("--------------------\n");
+	return ;
 }
 
 int	main(int ac, char **av)
 {	
-	char	*args;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**args;
+	char	*str;
 
 	if (ac == 1)
 		exit(1);
-	if (!check_args(av, ac))
-		ft_error();
-	if (!check_is_int(av, ac))
-		ft_error();
-	if (!is_not_dup(av, ac))
-		ft_error();
-	args = ft_strjoin(av, ac);
+	stack_a = NULL;
+	stack_b = NULL;
+	str = ft_strjoin(av, ac);
+	args = ft_split(str, &ac);
+	is_valid_args(args, ac - 1);
+	ac -= 1;
+	while (ac >= 0)
+		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[ac--])));
+	ft_lstprint(stack_a);
 	return (0);
 }
 
-	// t_stack *head_a = NULL;
-	// t_stack *second_a = NULL;
-	// t_stack *third_a = NULL;
-	
-	// t_stack *head_b = NULL;
-	// t_stack *second_b = NULL;
-	// t_stack *third_b = NULL;
-	
-	// head_a = ft_lstnew(10);
-	// second_a = ft_lstnew(20);
-	// third_a = ft_lstnew(30);
-	
-	// head_b = ft_lstnew(40);
-	// second_b = ft_lstnew(50);
-	// third_b = ft_lstnew(60);
-	
-	// head_a->next = second_a;
-	// second_a->next = third_a;
-	// third_a->next = NULL;
-	
-	// head_b->next = second_b;
-	// second_b->next = third_b;
-	// third_b->next = NULL;
-	
-	// rev_rotate(&head_b);
-	// ft_lstprint(head_b);
-	
 	// system("leaks push_swap");
+	// rev_rotate(&stack_a);
+	// ft_lstprint(stack_a);
