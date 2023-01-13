@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/11 17:42:15 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/13 09:18:19 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+//BUFFER_SIZE used to read buffer from stdin
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
 //for test only
 # include <stdio.h>
 
@@ -30,6 +34,7 @@ void		swap(t_stack *head);
 void		push(t_stack **first, t_stack **second);
 void		rotate(t_stack **head);
 void		rev_rotate(t_stack **head);
+void		double_inst(char *inst, t_stack **stack_a, t_stack **stack_b);
 
 //Linked_list_functions
 void		ft_lstprint(t_stack *lst);
@@ -47,5 +52,11 @@ long long	ft_atoi(char *str);
 //parsing_functions
 void		is_valid_args(char **args, int nbr);
 void		ft_error(void);
+
+//checker_function
+void		is_list_valid(char *list);
+void		do_inst(char *list, t_stack **stack_a, t_stack **stack_b);
+void		is_sorted(t_stack **stack_a, t_stack **stack_b);
+void		checker_message(int is_sorted);
 
 #endif

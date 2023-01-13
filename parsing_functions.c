@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:31:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/11 17:49:53 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/12 10:44:06 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(void)
 int	check_args(char **args, int nbr)
 {
 	int	i;
-	
+
 	while (nbr >= 0)
 	{
 		i = 0;
@@ -42,7 +42,6 @@ int	check_is_int(char **args, int nbr)
 
 	while (nbr >= 0)
 	{
-
 		nb = ft_atoi(args[nbr]);
 		if (nb < INT_MIN || nb > INT_MAX)
 			return (0);
@@ -62,7 +61,7 @@ int	is_not_dup(char **args, int nbr)
 		{
 			if (ft_atoi(args[nbr]) == ft_atoi(args[i]))
 				return (0);
-			i--;	
+			i--;
 		}
 		nbr--;
 	}
