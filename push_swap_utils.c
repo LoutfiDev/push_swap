@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 11:48:33 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/13 21:39:53 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,17 @@ void	rev_rotate(t_stack **head)
 	return ;
 }
 
-// void	double_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
-// {
-// 	if (ft_strncmp(inst, "rr", ft_strlen(inst)) == 0)
-// 	{
-// 		rotate(stack_a);
-// 		rotate(stack_b);
-// 	}
-// 	if (ft_strncmp(inst, "rrr", ft_strlen(inst)) == 0)
-// 	{
-// 		rev_rotate(stack_a);
-// 		rev_rotate(stack_b);
-// 	}
-// 	return ;
-// }
+void	double_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
+{
+	if (ft_strncmp(inst, "rr", ft_strlen(inst)) == 0)
+	{
+		rotate(stack_a);
+		rotate(stack_b);
+	}
+	if (ft_strncmp(inst, "rrr", ft_strlen(inst)) == 0)
+	{
+		rev_rotate(stack_a);
+		rev_rotate(stack_b);
+	}
+	return ;
+}

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:24:22 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 12:07:18 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/13 21:34:46 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	is_inst_valid(char *inst)
 void	do_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strncmp(inst, "sa", ft_strlen(inst)) == 0)
-		swap(stack_a);
+		swap(*stack_a);
 	if (ft_strncmp(inst, "sb", ft_strlen(inst)) == 0)
-		swap(stack_b);
+		swap(*stack_b);
 	if (ft_strncmp(inst, "pa", ft_strlen(inst)) == 0)
 		push(stack_b, stack_a);
 	if (ft_strncmp(inst, "pb", ft_strlen(inst)) == 0)
