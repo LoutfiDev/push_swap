@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:27:28 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/11 17:41:51 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/14 11:00:12 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ char	**ft_split(char *str, int *ac)
 	array = malloc(sizeof(char *) * (*ac + 1));
 	array[*ac] = 0;
 	fill_words(array, str);
+	free(str);
 	return (array);
 }

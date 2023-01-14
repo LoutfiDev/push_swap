@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 21:39:53 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/14 09:53:43 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	push(t_stack **first, t_stack **second)
 {
 	t_stack	*tmp;
 
-	if (!(*second))
+	if (!second || !(*second))
 		return ;
 	tmp = ft_lstnew((*second)->data);
 	ft_lstadd_front(first, tmp);
@@ -40,7 +40,7 @@ void	rotate(t_stack **head)
 {
 	t_stack	*tmp;
 
-	if (!head)
+	if (!head || !(*head))
 		return ;
 	tmp = ft_lstnew((*head)->data);
 	ft_lstdelone(head);
@@ -53,7 +53,7 @@ void	rev_rotate(t_stack **head)
 	t_stack	*last;
 	t_stack	*tmp;
 
-	if (!head)
+	if (!head || !(*head))
 		return ;
 	last = ft_lstnew(ft_lstlast(*head)->data);
 	ft_lstadd_front(head, last);
@@ -70,12 +70,12 @@ void	rev_rotate(t_stack **head)
 
 void	double_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_strncmp(inst, "rr", ft_strlen(inst)) == 0)
+	if (ft_strncmp(inst, "rr\n", ft_strlen(inst)) == 0)
 	{
 		rotate(stack_a);
 		rotate(stack_b);
 	}
-	if (ft_strncmp(inst, "rrr", ft_strlen(inst)) == 0)
+	if (ft_strncmp(inst, "rrr\n", ft_strlen(inst)) == 0)
 	{
 		rev_rotate(stack_a);
 		rev_rotate(stack_b);

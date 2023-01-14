@@ -6,7 +6,7 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 08:43:01 by yloutfi           #+#    #+#              #
-#    Updated: 2023/01/13 21:45:09 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/01/14 10:15:29 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,22 +27,23 @@ BONUS_OBJS = checker_bonus.o checker_utils_bonus.o 	\
 	parsing_functions.o libft_functions.o
 	
 NAME = push_swap
+NAME_BONUS = checker
 CFLAGS = -Wall -Wextra -Werror
 CC = cc
 
 all : $(NAME)
 
 bonus : $(BONUS_OBJS)
-	$(CC) $(CFLAGS) $(BONUS_SRCS) -o checker
+	$(CC) $(CFLAGS) $(BONUS_SRCS) -o $(NAME_BONUS)
 	
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
 
 clean :
 	-rm -f $(OBJS) $(BONUS_OBJS)
 		
 fclean : clean
 	-rm -f $(NAME)
-	-rm -f checker
+	-rm -f $(NAME_BONUS)
 
 re : fclean	all

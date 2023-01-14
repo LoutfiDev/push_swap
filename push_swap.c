@@ -6,13 +6,13 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 21:30:03 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/14 10:16:07 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//just for test 
+// just for test 
 void	ft_lstprint(t_stack *lst)
 {
 	while (lst)
@@ -47,5 +47,6 @@ int	main(int ac, char **av)
 }
 
 	// system("leaks push_swap");
+	// -fsanitize=address -g
 	// rev_rotate(&stack_a);
 	// ft_lstprint(stack_a);

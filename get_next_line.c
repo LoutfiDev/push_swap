@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 09:27:58 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 20:02:37 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/14 09:38:34 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	haystack = ft_read(fd, store);
 	if (!haystack)
+	{
 		free(store);
+		return (NULL);
+	}
 	line = ft_get_line(haystack);
 	store = ft_substr(haystack, ft_strlen(line), ft_strlen(haystack));
 	free(haystack);
