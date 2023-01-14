@@ -6,7 +6,7 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 08:43:01 by yloutfi           #+#    #+#              #
-#    Updated: 2023/01/14 10:15:29 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/01/14 15:27:18 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,13 @@ CC = cc
 
 all : $(NAME)
 
-bonus : $(BONUS_OBJS)
-	$(CC) $(CFLAGS) $(BONUS_SRCS) -o $(NAME_BONUS)
+bonus : $(NAME_BONUS)
+
+$(NAME_BONUS) : $(BONUS_OBJS)
+	$(CC) $(CFLAGS) $(BONUS_OBJS) -o $(NAME_BONUS)
 	
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
 
 clean :
 	-rm -f $(OBJS) $(BONUS_OBJS)
@@ -47,3 +49,5 @@ fclean : clean
 	-rm -f $(NAME_BONUS)
 
 re : fclean	all
+
+.PHONY: all bonus clean fclean re
