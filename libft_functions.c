@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 19:52:30 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/14 09:33:01 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/15 11:09:57 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_argsjoin(char **args, int nbr)
 	int		j;
 	char	*res;
 
-	if (!args || !(*args))
+	if (!args || !*args[1])
 		return (0);
 	i = 1;
 	j = 0;
