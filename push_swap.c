@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/14 10:16:07 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/17 12:22:58 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 	ac -= 1;
 	while (ac >= 0)
 		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[ac--])));
-	ft_lstprint(stack_a);
+	simple_sort(&stack_a, &stack_b);
 	return (0);
 }
 

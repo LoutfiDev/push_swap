@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:42:25 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/15 11:15:33 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/17 12:17:21 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 		is_inst_valid(list);
 		do_inst(list, &stack_a, &stack_b);
 	}
-	is_sorted(&stack_a, &stack_b);
+	checker_message(is_sorted(&stack_a, &stack_b));
 	return (0);
 }
 

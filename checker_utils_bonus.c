@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:24:22 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/14 11:05:17 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/17 11:38:30 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,32 +85,5 @@ void	do_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 	if (ft_strncmp(inst, "rrr\n", ft_strlen(inst)) == 0)
 		double_inst(inst, stack_a, stack_b);
 	free (inst);
-	return ;
-}
-
-void	is_sorted(t_stack **stack_a, t_stack **stack_b)
-{
-	int			min;
-	int			is_sorted;
-	t_stack		*lst;
-
-	lst = *stack_a;
-	min = lst->data;
-	is_sorted = 0;
-	if (!stack_b || !(*stack_b))
-	{
-		is_sorted = 1;
-		while (lst->next)
-		{
-			if (min > lst->next->data)
-			{
-				is_sorted = 0;
-				break ;
-			}
-			min = lst->next->data;
-			lst = lst->next;
-		}
-	}
-	checker_message(is_sorted);
 	return ;
 }

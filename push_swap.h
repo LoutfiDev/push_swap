@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/13 21:32:45 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/17 11:37:38 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,13 @@ void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstdelone(t_stack **lst);
 
-//Libft_functions
+//global_functions
 int			ft_strlen(char *str);
 int			ft_strncmp(const char *s1, const char *s2, int n);
 char		**ft_split(char *str, int *ac);
 char		*ft_argsjoin(char **args, int nbr);
 long long	ft_atoi(char *str);
+int			is_sorted(t_stack **stack_a, t_stack **stack_b);
 
 //get_next_line function
 char		*get_next_line(int fd);
@@ -67,7 +68,9 @@ void		ft_error(void);
 //checker_function
 void		is_inst_valid(char *list);
 void		do_inst(char *list, t_stack **stack_a, t_stack **stack_b);
-void		is_sorted(t_stack **stack_a, t_stack **stack_b);
 void		checker_message(int is_sorted);
+
+//sorting_versions
+void		simple_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 19:52:30 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/15 11:09:57 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/17 11:38:24 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,27 @@ char	*ft_argsjoin(char **args, int nbr)
 	}
 	res[j] = '\0';
 	return (res);
+}
+
+int	is_sorted(t_stack **stack_a, t_stack **stack_b)
+{
+	int			min;
+	int			is_sorted;
+	t_stack		*lst;
+
+	lst = *stack_a;
+	min = lst->data;
+	is_sorted = 0;
+	if (!stack_b || !(*stack_b))
+	{
+		is_sorted = 1;
+		while (lst->next)
+		{
+			if (min > lst->next->data)
+				return (0);
+			min = lst->next->data;
+			lst = lst->next;
+		}
+	}
+	return (is_sorted);
 }
