@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:30:50 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/17 13:32:49 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/18 13:00:45 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		index = get_min_index(stack_a);
 		move_min(stack_a, index);
+		if (is_sorted(stack_a, stack_b) == 1)
+			break;
 		index = get_max_index(stack_a);
 		move_max(stack_a, index);
 	}
