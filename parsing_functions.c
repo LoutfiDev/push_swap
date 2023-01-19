@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:31:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/15 11:14:38 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:47:22 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(void)
 int	check_args(char **args, int nbr)
 {
 	int	i;
-	
+
 	if (!args || !(*args))
 		return (0);
 	while (nbr >= 0)
@@ -29,6 +29,8 @@ int	check_args(char **args, int nbr)
 		i = 0;
 		while (args[nbr][i])
 		{
+			if (args[nbr][i] == '-' || args[nbr][i] == '+')
+				i++;
 			if (args[nbr][i] < '0' || args[nbr][i] > '9')
 				return (0);
 			i++;

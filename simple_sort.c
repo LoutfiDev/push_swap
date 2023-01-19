@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:30:50 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/18 13:00:45 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:17:40 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_min_index(t_stack **stack_a)
 
 	lst = *stack_a;
 	min = lst->data;
-	index = 0;
+	index = 1;
 	i = 1;
 	while (lst->next)
 	{
@@ -45,7 +45,7 @@ int	get_max_index(t_stack **stack_a)
 
 	lst = *stack_a;
 	max = lst->data;
-	index = 0;
+	index = 1;
 	i = 1;
 	while (lst->next)
 	{
@@ -63,30 +63,18 @@ int	get_max_index(t_stack **stack_a)
 void	move_min(t_stack **stack_a, int index)
 {
 	if (index == 2)
-	{
-		swap(*stack_a);
-		write(1, "sa\n", 3);
-	}
+		swap(*stack_a, "sa\n");
 	if (index == 3)
-	{
-		rev_rotate(stack_a);
-		write(1, "rra\n", 4);
-	}
+		rev_rotate(stack_a, "rra\n");
 	return ;
 }
 
 void	move_max(t_stack **stack_a, int index)
 {
 	if (index == 1)
-	{
-		rotate(stack_a);
-		write(1, "ra\n", 3);
-	}
+		rotate(stack_a, "ra\n");
 	if (index == 2)
-	{
-		rev_rotate(stack_a);
-		write(1, "rra\n", 4);
-	}
+		rev_rotate(stack_a, "rra\n");
 	return ;
 }
 
@@ -100,7 +88,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		index = get_min_index(stack_a);
 		move_min(stack_a, index);
 		if (is_sorted(stack_a, stack_b) == 1)
-			break;
+			break ;
 		index = get_max_index(stack_a);
 		move_max(stack_a, index);
 	}

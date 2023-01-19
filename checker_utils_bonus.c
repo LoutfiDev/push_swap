@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:24:22 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/17 11:38:30 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:10:28 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,23 +65,23 @@ void	is_inst_valid(char *inst)
 void	do_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strncmp(inst, "sa\n", ft_strlen(inst)) == 0)
-		swap(*stack_a);
+		swap(*stack_a, inst);
 	if (ft_strncmp(inst, "sb\n", ft_strlen(inst)) == 0)
-		swap(*stack_b);
+		swap(*stack_b, inst);
 	if (ft_strncmp(inst, "pa\n", ft_strlen(inst)) == 0)
-		push(stack_a, stack_b);
+		push(stack_a, stack_b, inst);
 	if (ft_strncmp(inst, "pb\n", ft_strlen(inst)) == 0)
-		push(stack_b, stack_a);
+		push(stack_b, stack_a, inst);
 	if (ft_strncmp(inst, "ra\n", ft_strlen(inst)) == 0)
-		rotate(stack_a);
+		rotate(stack_a, inst);
 	if (ft_strncmp(inst, "rb\n", ft_strlen(inst)) == 0)
-		rotate(stack_b);
+		rotate(stack_b, inst);
 	if (ft_strncmp(inst, "rr\n", ft_strlen(inst)) == 0)
 		double_inst(inst, stack_a, stack_b);
 	if (ft_strncmp(inst, "rra\n", ft_strlen(inst)) == 0)
-		rev_rotate(stack_a);
+		rev_rotate(stack_a, inst);
 	if (ft_strncmp(inst, "rrb\n", ft_strlen(inst)) == 0)
-		rev_rotate(stack_b);
+		rev_rotate(stack_b, inst);
 	if (ft_strncmp(inst, "rrr\n", ft_strlen(inst)) == 0)
 		double_inst(inst, stack_a, stack_b);
 	free (inst);

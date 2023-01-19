@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/17 11:37:38 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:13:37 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ typedef struct s_stack
 }	t_stack;
 
 //sorting_functions
-void		swap(t_stack *head);
-void		push(t_stack **first, t_stack **second);
-void		rotate(t_stack **head);
-void		rev_rotate(t_stack **head);
+void		swap(t_stack *head, char *inst);
+void		push(t_stack **first, t_stack **second, char *inst);
+void		rotate(t_stack **head, char *inst);
+void		rev_rotate(t_stack **head, char *inst);
 void		double_inst(char *inst, t_stack **stack_a, t_stack **stack_b);
 
 //Linked_list_functions
@@ -45,6 +45,7 @@ t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstdelone(t_stack **lst);
+int			ft_lstsize(t_stack *lst);
 
 //global_functions
 int			ft_strlen(char *str);
@@ -72,5 +73,6 @@ void		checker_message(int is_sorted);
 
 //sorting_versions
 void		simple_sort(t_stack **stack_a, t_stack **stack_b);
+void		middle_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

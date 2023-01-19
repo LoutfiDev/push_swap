@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/17 12:22:58 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/19 13:43:36 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	char	**args;
 	char	*str;
+	int		i;
 
 	if (ac == 1)
 		exit(1);
@@ -39,14 +40,18 @@ int	main(int ac, char **av)
 	str = ft_argsjoin(av, ac);
 	args = ft_split(str, &ac);
 	is_valid_args(args, ac - 1);
-	ac -= 1;
-	while (ac >= 0)
-		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[ac--])));
-	simple_sort(&stack_a, &stack_b);
+	i = ac - 1;
+	while (i >= 0)
+		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[i--])));
+	if (ac <= 3)
+		simple_sort(&stack_a, &stack_b);
+	else if (ac <= 5)
+		middle_sort(&stack_a, &stack_b);
+	// else
+	// 	advance_sort(&stack_a, &stack_b);
 	return (0);
 }
-
+	// ft_lstprint(stack_a);
 	// system("leaks push_swap");
 	// -fsanitize=address -g
 	// rev_rotate(&stack_a);
-	// ft_lstprint(stack_a);
