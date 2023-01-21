@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/19 16:13:37 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:12:19 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char		**ft_split(char *str, int *ac);
 char		*ft_argsjoin(char **args, int nbr);
 long long	ft_atoi(char *str);
 int			is_sorted(t_stack **stack_a, t_stack **stack_b);
+int			get_min_index1(t_stack **stack_a, int *min);
 
 //get_next_line function
 char		*get_next_line(int fd);
@@ -74,5 +75,6 @@ void		checker_message(int is_sorted);
 //sorting_versions
 void		simple_sort(t_stack **stack_a, t_stack **stack_b);
 void		middle_sort(t_stack **stack_a, t_stack **stack_b);
+void		advanced_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

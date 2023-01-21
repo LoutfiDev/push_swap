@@ -6,16 +6,16 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 08:43:01 by yloutfi           #+#    #+#              #
-#    Updated: 2023/01/18 17:35:23 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/01/21 09:10:02 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = push_swap.c push_swap_utils.c stack_utils.c 	\
 	parsing_functions.c ft_split.c libft_functions.c\
-	simple_sort.c middle_sort.c
+	simple_sort.c middle_sort.c advanced_sort.c
 OBJS = push_swap.o push_swap_utils.o stack_utils.o 	\
 	parsing_functions.o ft_split.o libft_functions.o\
-	simple_sort.o middle_sort.o
+	simple_sort.o middle_sort.o advanced_sort.o
 
 BONUS_SRCS = checker_bonus.c checker_utils_bonus.c 	\
 	get_next_line.c get_next_line_utils.c			\
