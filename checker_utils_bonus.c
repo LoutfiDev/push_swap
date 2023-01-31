@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:24:22 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/19 16:10:28 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/24 09:16:27 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void	do_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 		swap(*stack_a, inst);
 	if (ft_strncmp(inst, "sb\n", ft_strlen(inst)) == 0)
 		swap(*stack_b, inst);
+	if (ft_strncmp(inst, "ss\n", ft_strlen(inst)) == 0)
+		double_inst(inst, stack_a, stack_b);
 	if (ft_strncmp(inst, "pa\n", ft_strlen(inst)) == 0)
 		push(stack_a, stack_b, inst);
 	if (ft_strncmp(inst, "pb\n", ft_strlen(inst)) == 0)

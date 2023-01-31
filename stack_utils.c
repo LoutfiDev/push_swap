@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 11:07:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/10 16:03:09 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/30 14:47:48 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,19 @@ t_stack	*ft_lstlast(t_stack *lst)
 	return (lst);
 }
 
-t_stack	*ft_lstnew(int data)
+t_stack	*ft_lstnew(t_stack *node)
 {
 	t_stack	*new_node;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (0);
-	new_node->data = data;
+	new_node->data = node->data;
+	new_node->pos = 0;
+	new_node->target_pos = 0;
+	new_node->rank = node->rank;
+	new_node->cost_stack_a = 0;
+	new_node->cost_stack_b = 0;
 	new_node->next = NULL;
 	return (new_node);
 }

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/21 11:12:19 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/30 12:31:45 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,14 @@
 typedef struct s_stack
 {
 	int				data;
+    int            	pos;
+    int            	target_pos;
+    int            	rank;
+    int            	cost_stack_a;
+    int            	cost_stack_b;
 	struct s_stack	*next;
 }	t_stack;
+
 
 //sorting_functions
 void		swap(t_stack *head, char *inst);
@@ -40,7 +46,7 @@ void		double_inst(char *inst, t_stack **stack_a, t_stack **stack_b);
 
 //Linked_list_functions
 void		ft_lstprint(t_stack *lst);
-t_stack		*ft_lstnew(int data);
+t_stack		*ft_lstnew(t_stack *node);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -54,7 +60,9 @@ char		**ft_split(char *str, int *ac);
 char		*ft_argsjoin(char **args, int nbr);
 long long	ft_atoi(char *str);
 int			is_sorted(t_stack **stack_a, t_stack **stack_b);
-int			get_min_index1(t_stack **stack_a, int *min);
+int			get_min_index(t_stack **stack_a, int *min);
+int			get_max_index(t_stack **stack_a, int *max);
+void		stack_ranking(t_stack **stack);
 
 //get_next_line function
 char		*get_next_line(int fd);

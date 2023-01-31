@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/21 09:17:16 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/30 12:29:54 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@ void	ft_lstprint(t_stack *lst)
 }
 //
 
+t_stack	*ft_create(int data)
+{
+	t_stack	*new_node;
+
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_node)
+		return (0);
+	new_node->data = data;
+	new_node->next = NULL;
+	return (new_node);
+}
+
 int	main(int ac, char **av)
 {	
 	t_stack	*stack_a;
@@ -42,16 +54,16 @@ int	main(int ac, char **av)
 	is_valid_args(args, ac - 1);
 	i = ac - 1;
 	while (i >= 0)
-		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[i--])));
-	if (ac <= 3)
-		simple_sort(&stack_a, &stack_b);
-	else if (ac <= 5)
-		middle_sort(&stack_a, &stack_b);
-	else
+		ft_lstadd_front(&stack_a, ft_create(ft_atoi(args[i--])));
+	// if (ac <= 3)
+	// 	simple_sort(&stack_a, &stack_b);
+	// else if (ac <= 5)
+	// 	middle_sort(&stack_a, &stack_b);
+	// else
 		advanced_sort(&stack_a, &stack_b);
 	return (0);
 }
-	// ft_lstprint(stack_a);
 	// system("leaks push_swap");
+	// ft_lstprint(stack_a);
 	// -fsanitize=address -g
 	// rev_rotate(&stack_a);

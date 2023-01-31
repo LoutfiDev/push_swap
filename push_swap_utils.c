@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/19 16:21:40 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/01/30 13:36:10 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	swap(t_stack *head, char *inst)
 	temp = head->data;
 	head->data = head->next->data;
 	head->next->data = temp;
-	write(1, inst, ft_strlen(inst));
+	if (inst)
+		write(1, inst, ft_strlen(inst));
 	return ;
 }
 
@@ -31,7 +32,7 @@ void	push(t_stack **first, t_stack **second, char *inst)
 
 	if (!second || !(*second))
 		return ;
-	tmp = ft_lstnew((*second)->data);
+	tmp = ft_lstnew(*second);
 	ft_lstadd_front(first, tmp);
 	ft_lstdelone(second);
 	write(1, inst, ft_strlen(inst));
@@ -44,7 +45,7 @@ void	rotate(t_stack **head, char *inst)
 
 	if (!head || !(*head))
 		return ;
-	tmp = ft_lstnew((*head)->data);
+	tmp = ft_lstnew(*head);
 	ft_lstdelone(head);
 	ft_lstadd_back(head, tmp);
 	if (inst)
@@ -59,7 +60,7 @@ void	rev_rotate(t_stack **head, char *inst)
 
 	if (!head || !(*head))
 		return ;
-	last = ft_lstnew(ft_lstlast(*head)->data);
+	last = ft_lstnew(ft_lstlast(*head));
 	ft_lstadd_front(head, last);
 	tmp = last -> next;
 	while (tmp->next)
@@ -76,6 +77,12 @@ void	rev_rotate(t_stack **head, char *inst)
 
 void	double_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
 {
+	if (ft_strncmp(inst, "ss\n", ft_strlen(inst)) == 0)
+	{
+		swap(*stack_a, NULL);
+		swap(*stack_b, NULL);
+		write(1, inst, ft_strlen(inst));
+	}
 	if (ft_strncmp(inst, "rr\n", ft_strlen(inst)) == 0)
 	{
 		rotate(stack_a, NULL);
