@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:27:28 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/15 11:13:00 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/01 22:29:15 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	count_words(char *str)
 char	**ft_split(char *str, int *ac)
 {
 	char	**array;
-	
+
 	if (!str)
 		return (NULL);
 	*ac = count_words(str);

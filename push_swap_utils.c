@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/30 13:36:10 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/01 22:42:23 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,24 +75,26 @@ void	rev_rotate(t_stack **head, char *inst)
 	return ;
 }
 
-void	double_inst(char *inst, t_stack **stack_a, t_stack **stack_b)
+void	double_inst(char *inst, t_stack **a, t_stack **b, int *exit)
 {
+	if (exit)
+		++(*exit);
 	if (ft_strncmp(inst, "ss\n", ft_strlen(inst)) == 0)
 	{
-		swap(*stack_a, NULL);
-		swap(*stack_b, NULL);
+		swap(*a, NULL);
+		swap(*b, NULL);
 		write(1, inst, ft_strlen(inst));
 	}
 	if (ft_strncmp(inst, "rr\n", ft_strlen(inst)) == 0)
 	{
-		rotate(stack_a, NULL);
-		rotate(stack_b, NULL);
+		rotate(a, NULL);
+		rotate(b, NULL);
 		write(1, inst, ft_strlen(inst));
 	}
 	if (ft_strncmp(inst, "rrr\n", ft_strlen(inst)) == 0)
 	{
-		rev_rotate(stack_a, NULL);
-		rev_rotate(stack_b, NULL);
+		rev_rotate(a, NULL);
+		rev_rotate(b, NULL);
 		write(1, inst, ft_strlen(inst));
 	}
 	return ;

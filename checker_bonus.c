@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:42:25 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/27 18:08:09 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/01 22:40:30 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	is_valid_args(args, ac - 1);
 	ac -= 1;
 	while (ac >= 0)
-		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(args[ac--])));
+		ft_lstadd_front(&stack_a, ft_create(ft_atoi(args[ac--])));
 	while (1)
 	{
 		list = get_next_line(0);
@@ -41,4 +41,4 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-	// system("leaks checker");
+// system("leaks checker");

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 11:38:34 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/28 11:39:20 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/01 22:45:13 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	get_next_max(t_stack **stack, int max)
 		}
 		else if (next_max >= max)
 		{
-			lst = lst->next;	
+			lst = lst->next;
 			next_max = lst->data;
 		}
 		else

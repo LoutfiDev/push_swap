@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/30 12:31:45 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/01 22:40:23 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,22 @@
 typedef struct s_stack
 {
 	int				data;
-    int            	pos;
-    int            	target_pos;
-    int            	rank;
-    int            	cost_stack_a;
-    int            	cost_stack_b;
+	int				target_pos;
+	int				rank;
+	int				cost_stack_a;
+	int				cost_stack_b;
 	struct s_stack	*next;
 }	t_stack;
-
 
 //sorting_functions
 void		swap(t_stack *head, char *inst);
 void		push(t_stack **first, t_stack **second, char *inst);
 void		rotate(t_stack **head, char *inst);
 void		rev_rotate(t_stack **head, char *inst);
-void		double_inst(char *inst, t_stack **stack_a, t_stack **stack_b);
+void		double_inst(char *inst, t_stack **a, t_stack **b, int *exit);
 
 //Linked_list_functions
-void		ft_lstprint(t_stack *lst);
+t_stack		*ft_create(int data);
 t_stack		*ft_lstnew(t_stack *node);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
@@ -84,5 +82,12 @@ void		checker_message(int is_sorted);
 void		simple_sort(t_stack **stack_a, t_stack **stack_b);
 void		middle_sort(t_stack **stack_a, t_stack **stack_b);
 void		advanced_sort(t_stack **stack_a, t_stack **stack_b);
+
+//Advanced_sort_utils
+void		push_to_b(t_stack **stack_a, t_stack **stack_b);
+void		set_target_pos(t_stack **stack_a, t_stack **stack_b);
+int			get_pos(t_stack **stack, int rank);
+void		set_cost_b(t_stack **stack);
+void		set_cost_a(t_stack **stack_a, t_stack **stack_b);
 
 #endif
