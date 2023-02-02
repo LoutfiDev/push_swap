@@ -6,7 +6,7 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 08:43:01 by yloutfi           #+#    #+#              #
-#    Updated: 2023/02/01 22:46:59 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/02/02 10:36:05 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ BONUS_OBJS = checker_bonus.o checker_utils_bonus.o 	\
 	
 NAME = push_swap
 NAME_BONUS = checker
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 CC = cc
 
 all : $(NAME)

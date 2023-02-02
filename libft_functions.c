@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 19:52:30 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/17 11:38:24 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:17:11 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int	is_sorted(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*lst;
 
 	lst = *stack_a;
+	if (!lst)
+		return (0);
 	min = lst->data;
 	is_sorted = 0;
 	if (!stack_b || !(*stack_b))

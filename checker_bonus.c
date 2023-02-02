@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 10:42:25 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:40:30 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:31:46 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,3 @@ int	main(int ac, char **av)
 	checker_message(is_sorted(&stack_a, &stack_b));
 	return (0);
 }
-
-// system("leaks checker");

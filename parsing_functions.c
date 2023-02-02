@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:31:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/01/19 14:47:22 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:21:02 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_args(char **args, int nbr)
 		i = 0;
 		while (args[nbr][i])
 		{
-			if (args[nbr][i] == '-' || args[nbr][i] == '+')
+			if ((args[nbr][i] == '-' || args[nbr][i] == '+') && !i)
 				i++;
 			if (args[nbr][i] < '0' || args[nbr][i] > '9')
 				return (0);
@@ -47,7 +47,7 @@ int	check_is_int(char **args, int nbr)
 	while (nbr >= 0)
 	{
 		nb = ft_atoi(args[nbr]);
-		if (nb < INT_MIN || nb > INT_MAX)
+		if (nb < -2147483648 || nb > 2147483647)
 			return (0);
 		nbr--;
 	}

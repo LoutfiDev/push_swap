@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:42:23 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:23:14 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	push(t_stack **first, t_stack **second, char *inst)
 	tmp = ft_lstnew(*second);
 	ft_lstadd_front(first, tmp);
 	ft_lstdelone(second);
-	write(1, inst, ft_strlen(inst));
+	if (inst)
+		write(1, inst, ft_strlen(inst));
 	return ;
 }
 
@@ -77,24 +78,24 @@ void	rev_rotate(t_stack **head, char *inst)
 
 void	double_inst(char *inst, t_stack **a, t_stack **b, int *exit)
 {
-	if (exit)
-		++(*exit);
 	if (ft_strncmp(inst, "ss\n", ft_strlen(inst)) == 0)
 	{
 		swap(*a, NULL);
 		swap(*b, NULL);
-		write(1, inst, ft_strlen(inst));
 	}
 	if (ft_strncmp(inst, "rr\n", ft_strlen(inst)) == 0)
 	{
 		rotate(a, NULL);
 		rotate(b, NULL);
-		write(1, inst, ft_strlen(inst));
 	}
 	if (ft_strncmp(inst, "rrr\n", ft_strlen(inst)) == 0)
 	{
 		rev_rotate(a, NULL);
 		rev_rotate(b, NULL);
+	}
+	if (exit)
+	{
+		++(*exit);
 		write(1, inst, ft_strlen(inst));
 	}
 	return ;

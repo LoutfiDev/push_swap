@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:43:49 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:32:07 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,3 @@ int	main(int ac, char **av)
 		advanced_sort(&stack_a, &stack_b);
 	return (0);
 }
-	// system("leaks push_swap");
-	// -fsanitize=address -g
