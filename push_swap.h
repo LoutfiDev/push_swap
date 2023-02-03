@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:40:23 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/03 12:15:12 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ long long	ft_atoi(char *str);
 int			is_sorted(t_stack **stack_a, t_stack **stack_b);
 int			get_min_index(t_stack **stack_a, int *min);
 int			get_max_index(t_stack **stack_a, int *max);
-void		stack_ranking(t_stack **stack);
 
 //get_next_line function
 char		*get_next_line(int fd);
@@ -84,10 +83,13 @@ void		middle_sort(t_stack **stack_a, t_stack **stack_b);
 void		advanced_sort(t_stack **stack_a, t_stack **stack_b);
 
 //Advanced_sort_utils
+void		stack_ranking(t_stack **stack);
 void		push_to_b(t_stack **stack_a, t_stack **stack_b);
 void		set_target_pos(t_stack **stack_a, t_stack **stack_b);
 int			get_pos(t_stack **stack, int rank);
 void		set_cost_b(t_stack **stack);
 void		set_cost_a(t_stack **stack_a, t_stack **stack_b);
+int			get_min_rank(t_stack **stack);
+void		ps(t_stack **a, t_stack **b);
 
 #endif

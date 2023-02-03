@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 19:55:58 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:28:44 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/03 21:25:39 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,28 @@
 
 void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int	min;
-	int	max;
+	// int	min;
+	// int	max;
+	int	chunk;
+	int	n;
+	int	counter;
 
-	get_min_index(stack_a, &min);
-	get_max_index(stack_a, &max);
-	while (ft_lstsize(*stack_a) > 2)
+	// get_min_index(stack_a, &min);
+	// get_max_index(stack_a, &max);
+	chunk = ft_lstsize(*stack_a) / 10;
+	n = 1;
+	counter = 1;
+	while (ft_lstsize(*stack_a) > 3)
 	{
-		if ((*stack_a)->data == min || (*stack_a)->data == max)
+		if (/*(*stack_a)->data == min || (*stack_a)->data == max ||*/ (*stack_a)->rank > chunk * n)
 			rotate(stack_a, "ra\n");
 		else
+		{
 			push(stack_b, stack_a, "pb\n");
+			counter++;
+		}
+		if	(counter == chunk * n)
+			n++;
 	}
 }
 
@@ -44,6 +55,8 @@ void	set_target_pos(t_stack **stack_a, t_stack **stack_b)
 				lst_b->target_pos = lst_a->rank;
 			lst_a = lst_a->next;
 		}
+		if (lst_b->target_pos == INT_MAX)
+			lst_b->target_pos = get_min_rank(stack_a);
 		lst_b = lst_b->next;
 	}
 	return ;

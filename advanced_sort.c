@@ -6,11 +6,34 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 09:07:54 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/01 22:28:17 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/03 21:35:54 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ps(t_stack **a, t_stack **b)
+{
+	t_stack	*lst;
+
+	lst = *a;
+	printf("rank\tt-pos\tcost_a\tcost_b\n");
+	while (lst)
+	{
+		printf("%d\t%d\t%d\t%d\n", lst->rank, lst->target_pos, lst->cost_stack_a, lst->cost_stack_b);
+		lst = lst->next;
+	}
+	if (b == NULL)
+		return ;
+	lst = *b;
+	printf("rank\tt-pos\tcost_a\tcost_b\n");
+	while (lst)
+	{
+		printf("%d\t%d\t%d\t%d\n", lst->rank, lst->target_pos, lst->cost_stack_a, lst->cost_stack_b);
+		lst = lst->next;
+	}
+	return ;
+}
 
 t_stack	*find_cheapest(t_stack **stack)
 {
@@ -62,6 +85,7 @@ void	push_cheapest(t_stack **stack_a, t_stack **stack_b)
 	int		dest_pos;
 	int		cheap_pos;
 
+	// ps(stack_a, stack_b);
 	_together(stack_a, stack_b);
 	cheap = find_cheapest(stack_b);
 	while ((*stack_a)->rank != cheap->target_pos)
@@ -90,6 +114,8 @@ void	advanced_sort(t_stack **stack_a, t_stack **stack_b)
 	stack_ranking(stack_a);
 	push_to_b(stack_a, stack_b);
 	simple_sort(stack_a, NULL);
+	// if ((*stack_a)->rank < (*stack_a)->next->rank)
+	// 	swap(*stack_a, "sa\n");
 	while (*stack_b)
 	{
 		set_target_pos(stack_a, stack_b);
@@ -106,3 +132,4 @@ void	advanced_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	return ;
 }
+

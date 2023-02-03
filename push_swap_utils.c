@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:59:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/02 10:23:14 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/02 17:32:34 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	swap(t_stack *head, char *inst)
 	temp = head->data;
 	head->data = head->next->data;
 	head->next->data = temp;
+	temp = head->rank;
+	head->rank = head->next->rank;
+	head->next->rank = temp;
 	if (inst)
 		write(1, inst, ft_strlen(inst));
 	return ;
