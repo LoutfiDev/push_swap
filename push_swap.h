@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:51 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/03 12:15:12 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/04 22:22:37 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,5 @@ int			get_pos(t_stack **stack, int rank);
 void		set_cost_b(t_stack **stack);
 void		set_cost_a(t_stack **stack_a, t_stack **stack_b);
 int			get_min_rank(t_stack **stack);
-void		ps(t_stack **a, t_stack **b);
 
 #endif

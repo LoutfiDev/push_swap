@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 08:42:26 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/02/03 16:31:17 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/02/05 17:49:58 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac == 1)
-		exit(1);
+		exit(0);
 	stack_a = NULL;
 	stack_b = NULL;
 	str = ft_argsjoin(av, ac);
@@ -32,8 +32,6 @@ int	main(int ac, char **av)
 		ft_lstadd_front(&stack_a, ft_create(ft_atoi(args[i--])));
 	if (ac <= 3)
 		simple_sort(&stack_a, &stack_b);
-	else if (ac <= 5)
-		middle_sort(&stack_a, &stack_b);
 	else
 		advanced_sort(&stack_a, &stack_b);
 	return (0);
